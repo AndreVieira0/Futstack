@@ -1,0 +1,38 @@
+export const PRODUTOS_MOCK = [
+  {
+    id: 1,
+    nome: "Tenis de corrida",
+    preco: 199.99,
+    imagem: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+  },
+  {
+    id: 2,
+    nome: "Bola de futebol",
+    preco: 99.99,
+    imagem: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+  },
+  {
+    id: 3,
+    nome: "Camiseta de futebol",
+    preco: 79.99,
+    imagem: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+  },
+  {
+    id: 4,
+    nome: "Short de futebol",
+    preco: 59.99,
+    imagem: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+  },
+  {
+    id: 5,
+    nome: "Meias de futebol",
+    preco: 29.99,
+    imagem: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+  },
+  {
+    id: 6,
+    nome: "Chuteira de futsal",
+    preco: 129.99,
+    imagem: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+  },
+];

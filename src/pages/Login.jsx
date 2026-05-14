@@ -1,15 +1,13 @@
 import { useState } from "react";
 
-function Login({ onToggle }) {
-  // Estados para capturar os dados do formulário
+function Login({ onToggle, onLoginSuccess }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aqui é onde você enviará os dados para o seu Backend no futuro
     console.log("Tentando logar com:", { email, password });
-    alert("Dados capturados! Verifique o console do navegador.");
+    onLoginSuccess(); 
   };
 
   return (
@@ -97,7 +95,7 @@ function Login({ onToggle }) {
           type="submit"
           className="w-full p-4 rounded-2xl bg-green-500 hover:bg-green-400 text-slate-950 font-bold text-base transition-all duration-300 shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] active:scale-[0.98] will-change-transform"
         >
-          Entrar na Futshop
+          Entrar na Futstack
         </button>
 
         {/* Footer Links */}

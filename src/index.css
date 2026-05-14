@@ -10,9 +10,6 @@ body {
   background-color: #020617;
   color: white;
   margin: 0;
-  overflow: hidden;
-  background-image: url("/background.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  overflow-x: hidden;
+  min-height: 100vh;
 }

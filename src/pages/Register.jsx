@@ -4,13 +4,13 @@ function Register({ onToggle }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+    //função que será chamada quando o formulário for enviado
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Tentando cadastrar:", { name, email, password });
     alert("Dados de cadastro capturados! Pronto para o Backend.");
   };
-
+// return é o que será renderizado na tela
   return (
     <div className="p-2 flex flex-col w-full mx-auto max-w-[400px]">
       <div className="text-center mb-8">
@@ -51,7 +51,7 @@ function Register({ onToggle }) {
           type="submit"
           className="w-full p-4 rounded-2xl bg-green-500 hover:bg-green-400 text-slate-950 font-bold text-base transition-all duration-300 shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] active:scale-[0.98] will-change-transform"
         >
-          Cadastrar na Futshop
+          Cadastrar na Futstack
         </button>
 
         <div className="text-center mt-2">
