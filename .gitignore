@@ -10,7 +10,13 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+coverage
 *.local
+.env
+.env.*
+!.env.example
+docker-compose.yml
+.git-local-backup
 
 # Editor directories and files
 .vscode/*

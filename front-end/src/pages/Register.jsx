@@ -1,14 +1,46 @@
 import { useState } from "react";
+import { Input } from "../components/ui/Input";
+import { Button } from "../components/ui/Button";
 
-function Register({ onToggle }) {
+function Register({ onToggle, onLoginSuccess }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
     //função que será chamada quando o formulário for enviado
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Tentando cadastrar:", { name, email, password });
-    alert("Dados de cadastro capturados! Pronto para o Backend.");
+    try {
+      const response = await fetch("http://localhost:3000/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Erro ao cadastrar");
+      }
+
+      // Login Automático
+      const loginResponse = await fetch("http://localhost:3000/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (loginResponse.ok) {
+        const loginData = await loginResponse.json();
+        localStorage.setItem("futstack_token", loginData.access_token);
+        localStorage.setItem("futstack_user_name", loginData.user.name);
+        alert("Cadastro realizado com sucesso! Entrando...");
+        if (onLoginSuccess) onLoginSuccess();
+      } else {
+        alert("Cadastro realizado com sucesso! Faça seu login.");
+        onToggle();
+      }
+    } catch (error) {
+      alert("Erro: " + error.message);
+    }
   };
 // return é o que será renderizado na tela
   return (
@@ -24,35 +56,29 @@ function Register({ onToggle }) {
 
       <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
         <div className="space-y-4">
-          <input
+          <Input
             type="text"
             placeholder="Nome Completo"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full p-4 rounded-2xl border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/[0.07] text-white placeholder:text-white/20 focus:outline-none focus:border-green-500/50 focus:bg-white/[0.08] transition-all duration-300 text-sm"
           />
-          <input
+          <Input
             type="email"
             placeholder="E-mail"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-4 rounded-2xl border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/[0.07] text-white placeholder:text-white/20 focus:outline-none focus:border-green-500/50 focus:bg-white/[0.08] transition-all duration-300 text-sm"
           />
-          <input
+          <Input
             type="password"
             placeholder="Sua melhor senha"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full p-4 rounded-2xl border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/[0.07] text-white placeholder:text-white/20 focus:outline-none focus:border-green-500/50 focus:bg-white/[0.08] transition-all duration-300 text-sm"
           />
         </div>
 
-        <button
-          type="submit"
-          className="w-full p-4 rounded-2xl bg-green-500 hover:bg-green-400 text-slate-950 font-bold text-base transition-all duration-300 shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] active:scale-[0.98] will-change-transform"
-        >
+        <Button type="submit">
           Cadastrar na Futstack
-        </button>
+        </Button>
 
         <div className="text-center mt-2">
           <p className="text-xs text-white/40">

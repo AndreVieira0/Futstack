@@ -4,18 +4,21 @@ export const PRODUTOS_MOCK = [
     nome: "Tenis de corrida",
     preco: 199.99,
     imagem: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    descricao: "Tenis de corrida leve e confortável, ideal para treinos e competições. Disponível em várias cores e tamanhos.",
   },
   {
     id: 2,
     nome: "Bola de futebol",
     preco: 99.99,
     imagem: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    descricao: "Bola de futebol de qualidade, perfeita para treinos e competições. Disponível em diversas cores e tamanhos.",
   },
   {
     id: 3,
     nome: "Camiseta de futebol",
     preco: 79.99,
     imagem: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    descricao: "Camiseta de futebol de qualidade, perfeita para treinos e competições. Disponível em diversas cores e tamanhos.",
   },
   {
     id: 4,
@@ -28,11 +31,26 @@ export const PRODUTOS_MOCK = [
     nome: "Meias de futebol",
     preco: 29.99,
     imagem: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    descricao: "Meias de futebol de qualidade, perfeitas para treinos e competições. Disponíveis em diversas cores e tamanhos.",
   },
   {
     id: 6,
     nome: "Chuteira de futsal",
     preco: 129.99,
     imagem: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+  },
+  {
+    id: 7,
+    nome: "Bola de basquete",
+    preco: 89.99,
+    imagem: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    descricao: "Bola de basquete de qualidade, perfeita para treinos e competições. Disponível em diversas cores e tamanhos.",
+  },
+  {
+    id: 8,
+    nome: "Camiseta de basquete",
+    preco: 69.99,
+    imagem: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    descricao: "Camiseta de basquete de qualidade, perfeita para treinos e competições. Disponível em diversas cores e tamanhos.",
   },
 ];
