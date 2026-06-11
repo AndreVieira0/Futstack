@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    container_name: futstack_db
+    environment:
+      POSTGRES_USER: your_db_user
+      POSTGRES_PASSWORD: your_db_password
+      POSTGRES_DB: your_db_name
+    ports:
+      - "5433:5432"
+    volumes:
+      - futstack_db_data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  futstack_db_data:
